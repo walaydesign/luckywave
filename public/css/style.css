@@ -1,6 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+
+
 body {
   font-family: "Noto Sans TC", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.back-login_logo {
+  margin-bottom: 8px;
+  max-height: 58px;
 }
 
 .back-login {
@@ -31,12 +43,16 @@ body {
 }
 
 .back-login_content_inner {
-  background-color: #fff;
+  background-color: white;
+  background-image: image('');
   width: 100%;
   height: 100%;
   border-radius: 15px;
   padding: 58px 75px 50px;
+  display: grid;
+  place-items: center;
 }
+
 
 .back-login_title {
   margin-bottom: 30px;
@@ -66,3 +82,83 @@ body {
   -webkit-text-stroke: 4px #fff;
 }
 /*# sourceMappingURL=style.css.map */
+
+.back-login_contact_form {
+  display: grid;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.back-login_contact_form_item,
+.back-login_contact_form_input,
+.back-login_contact_form_password {
+  display: flex; 
+  flex: 1;              
+  flex-direction: column; 
+  gap: 8px;     
+  min-width: 320px;   
+  width: 100%;
+}
+
+.back-login_button {
+  width: 100%;     
+  max-width: 320px;
+  border-radius: 35px;
+  margin-top: 58px;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(to right, #5FC4DC, #6078EA);
+  padding: 12px, auto;
+  height: 42px;
+}
+
+.role-label, .username-label, .password-label {
+  font-size: 16px;
+  color: #606266;
+}
+
+.input{
+  padding: 10px;
+  border: 1px solid #DCDFE6;
+  font-size: 16px;
+  border-radius: 4px;
+  width: 100%;
+  color: #A7AEBB;
+}
+
+.dropdown {
+  color: #A7AEBB;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #DCDFE6;
+  border-radius: 4px;
+  background-color: white;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.dropdown-container::after {
+  content: "▼";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #A7AEBB;
+  pointer-events: none;
+}
+
+svg {
+  width: 16px;
+  height: 16px;
+}

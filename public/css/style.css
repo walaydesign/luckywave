@@ -51,6 +51,12 @@ body {
   padding: 58px 75px 50px;
   display: grid;
   place-items: center;
+
+  
+  background-image: url(''); /* 替换为你的PNG图片路径 */
+  background-position: top center; /* 背景图片位置 */
+  background-repeat: no-repeat; /* 不重复背景图片 */
+  background-size: auto; /* 背景图片自动调整大小 */
 }
 
 
@@ -128,6 +134,12 @@ body {
   border-radius: 4px;
   width: 100%;
   color: #A7AEBB;
+}
+
+.input {
+  &::placeholder {
+    color: #A7AEBB;
+  }
 }
 
 .dropdown {

@@ -1,8 +1,7 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
-
-
 body {
-  font-family: "Noto Sans TC", serif;
+  font-family: "Noto Sans TC", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,21 +9,17 @@ body {
   margin: 0;
 }
 
-.back-login_logo {
-  margin-bottom: 8px;
-  max-height: 58px;
-}
-
 .back-login {
   width: 100vw;
   height: 100vh;
-  background-image: url(../img/bg.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url(../img/bg.png) center/cover no-repeat;
   padding-top: 250px;
 }
-
+.back-login_logo {
+  display: block;
+  margin: 0 auto 8px;
+  max-height: 58px;
+}
 .back-login_content {
   max-width: 540px;
   width: calc(100% - 40px);
@@ -33,7 +28,6 @@ body {
   border-radius: 24px;
   padding: 12px;
 }
-
 .back-login_content_border {
   width: 100%;
   height: 100%;
@@ -41,75 +35,65 @@ body {
   border-radius: 18px;
   background: linear-gradient(128deg, #B8D5F6 0%, #FAFAFA 88%, #8AB9FF 100%);
 }
-
 .back-login_content_inner {
-  background-color: white;
-  background-image: image('');
+  background: #fff url("../img/bg-short.png") top center no-repeat;
   width: 100%;
   height: 100%;
   border-radius: 15px;
   padding: 58px 75px 50px;
-  display: grid;
-  place-items: center;
-
-  
-  background-image: url(''); /* 替换为你的PNG图片路径 */
-  background-position: top center; /* 背景图片位置 */
-  background-repeat: no-repeat; /* 不重复背景图片 */
-  background-size: auto; /* 背景图片自动调整大小 */
 }
-
-
 .back-login_title {
   margin-bottom: 30px;
   text-align: center;
   position: relative;
 }
-
 .back-login_title > span {
   display: block;
   font-size: 26px;
   font-weight: 700;
   width: 100%;
-  background: -webkit-gradient(linear, right top, left top, from(#1369B9), to(#2ABDD2));
   background: linear-gradient(to left, #1369B9 0%, #2ABDD2 100%);
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
   color: transparent;
 }
 
-.back-login_title_color {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.back-login_title_shadow {
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-  -webkit-text-stroke: 4px #fff;
-}
-/*# sourceMappingURL=style.css.map */
-
 .back-login_contact_form {
   display: grid;
-  justify-content: space-between;
+  grid-template-columns: 1fr;
   gap: 20px;
   width: 100%;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+.input-container i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #A7AEBB;
 }
 
 .back-login_contact_form_item,
 .back-login_contact_form_input,
 .back-login_contact_form_password {
-  display: flex; 
-  flex: 1;              
-  flex-direction: column; 
-  gap: 8px;     
-  min-width: 320px;   
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 320px;
   width: 100%;
 }
 
 .back-login_button {
-  width: 100%;     
-  max-width: 320px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
   border-radius: 35px;
   margin-top: 58px;
   font-size: 18px;
@@ -118,16 +102,18 @@ body {
   border: none;
   cursor: pointer;
   background: linear-gradient(to right, #5FC4DC, #6078EA);
-  padding: 12px, auto;
+  padding: 12px auto;
   height: 42px;
 }
 
-.role-label, .username-label, .password-label {
+.role-label,
+.username-label,
+.password-label {
   font-size: 16px;
   color: #606266;
 }
 
-.input{
+.input {
   padding: 10px;
   border: 1px solid #DCDFE6;
   font-size: 16px;
@@ -135,11 +121,11 @@ body {
   width: 100%;
   color: #A7AEBB;
 }
-
-.input {
-  &::placeholder {
-    color: #A7AEBB;
-  }
+.input::-moz-placeholder {
+  color: #A7AEBB;
+}
+.input::placeholder {
+  color: #A7AEBB;
 }
 
 .dropdown {
@@ -150,27 +136,68 @@ body {
   border: 1px solid #DCDFE6;
   border-radius: 4px;
   background-color: white;
-  appearance: none;
   -webkit-appearance: none;
-  -moz-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   cursor: pointer;
   background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
   background-repeat: no-repeat;
   background-position: right 10px center;
 }
 
+.dropdown-container {
+  position: relative;
+}
 .dropdown-container::after {
   content: "▼";
   position: absolute;
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
-  font-size: 14px;
   color: #A7AEBB;
   pointer-events: none;
+  font-size: 6px;
+  line-height: 1;
 }
 
 svg {
   width: 16px;
   height: 16px;
 }
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.input-container label {
+  font-size: 16px;
+  color: #606266;
+}
+.input-container .input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #DCDFE6;
+  border-radius: 4px;
+  padding: 10px;
+  gap: 5px;
+}
+.input-container svg {
+  width: 14px;
+  height: 14px;
+  fill: #A7AEBB;
+}
+.input-container .input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  width: 100%;
+  padding: 0;
+  gap: 5px;
+}
+.input-container .input::-moz-placeholder {
+  color: #A7AEBB;
+}
+.input-container .input::placeholder {
+  color: #A7AEBB;
+}/*# sourceMappingURL=style.css.map */

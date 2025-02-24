@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucky Wave後台</title>
+    <title>Lucky Wave 後台</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
@@ -15,35 +15,45 @@
         <div class="back-login_content">
             <div class="back-login_content_border">
                 <div class="back-login_content_inner">
-                    <img class="back-login_logo" src="public/img/logo.png" alt="logo">
+                    <img class="back-login_logo" src="public/img/logo.png" alt="Lucky Wave Logo">
                     <h1 class="back-login_title">
-                        <span class="back-login_title_shadow">後台管理系統</span>
-                        <span class="back-login_title_color">後台管理系統</span>
+                        <span>後台管理系統</span>
                     </h1>
+
                     <div class="back-login_contact">
                         <form class="back-login_contact_form">
-                            <div class="back-login_contact_form_item">
-                                <label class="role-label" for="role">權限</label>
-                                <select id="role" name="role" class="dropdown" placeholder="使用者">
+                            <!-- 權限選擇 -->
+                            <div class="input-container">
+                                <label for="role">權限</label>
+                                <select id="role" name="role" class="dropdown">
                                     <option value="user">使用者</option>
                                     <option value="admin">管理員</option>
                                     <option value="superadmin">超級管理員</option>
                                 </select>
                             </div>
-                    
-                            <div class="back-login_contact_form_input">
-                                <label class="username-label" for="username">帳號</label>
-                                <input id="username" type="text" class="input" placeholder="請輸入帳號"> 
+
+                            <!-- 帳號輸入 -->
+                            <div class="input-container">
+                                <label for="username">帳號</label>
+                                <div class="input-wrapper">
+                                    <img src="public/img/account.svg" alt="帳號圖示">
+                                    <input id="username" type="text" class="input" placeholder="請輸入帳號">
+                                </div>
                             </div>
 
-                            <div class="back-login_contact_form_password">
-                                <label class="password-label" for="password">密碼</label>
-                                <input id="password" type="password" class="input" placeholder="請輸入密碼">
+                            <!-- 密碼輸入 -->
+                            <div class="input-container">
+                                <label for="password">密碼</label>
+                                <div class="input-wrapper">
+                                    <img src="public/img/lock.svg" alt="密碼圖示">
+                                    <input id="password" type="password" class="input" placeholder="請輸入密碼">
+                                </div>
                             </div>
 
-                        </form>   
+                            <!-- 登入按鈕 -->
+                            <button type="submit" class="back-login_button">登入</button>
+                        </form>
                     </div>
-                    <button class="back-login_button">登入</button>
                 </div>
             </div>
         </div>

@@ -1,107 +1,197 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
 
-// Variables
-$primary-color: #1369B9;
-$secondary-color: #2ABDD2;
-$text-color: #A7AEBB;
+$font-family: "Noto Sans TC", sans-serif;
+$primary-color: #A7AEBB;
 $border-color: #DCDFE6;
+$gradient-bg: linear-gradient(128deg, #B8D5F6 0%, #FAFAFA 88%, #8AB9FF 100%);
 $button-gradient: linear-gradient(to right, #5FC4DC, #6078EA);
-$background-gradient: linear-gradient(128deg, #B8D5F6 0%, #FAFAFA 88%, #8AB9FF 100%);
+$title-gradient: linear-gradient(to left, #1369B9 0%, #2ABDD2 100%);
 
-// Mixins
-@mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-// 基本樣式
 body {
-    font-family: "Noto Sans TC", sans-serif;
-    @include flex-center;
-    height: 100vh;
-    margin: 0;
+  font-family: $font-family;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-// 登入背景
 .back-login {
-    width: 100vw;
-    height: 100vh;
-    background: url(../img/bg.png) center/cover no-repeat;
-    padding-top: 250px;
+  width: 100vw;
+  height: 100vh;
+  background: url(../img/bg.png) center/cover no-repeat;
+  padding-top: 250px;
 
-    &_logo {
-        display: block;
-        margin: 0 auto 8px;
-        max-height: 58px;
+  &_logo {
+    display: block;
+    margin: 0 auto 8px;
+    max-height: 58px;
+  }
+
+  &_content {
+    max-width: 540px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 24px;
+    padding: 12px;
+
+    &_border {
+      width: 100%;
+      height: 100%;
+      padding: 3px;
+      border-radius: 18px;
+      background: $gradient-bg;
     }
 
-    &_content {
-        max-width: 540px;
-        width: calc(100% - 40px);
-        margin: 0 auto;
-        background-color: rgba(255, 255, 255, 0.4);
-        border-radius: 24px;
-        padding: 12px;
-
-        &_border {
-            width: 100%;
-            height: 100%;
-            padding: 3px;
-            border-radius: 18px;
-            background: $background-gradient;
-        }
-
-        &_inner {
-            background: #fff url('../img/bg-short.png') top center no-repeat;
-            width: 100%;
-            height: 100%;
-            border-radius: 15px;
-            padding: 58px 75px 50px;
-        }
+    &_inner {
+      background: #fff url("../img/bg-short.png") top center no-repeat;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      padding: 58px 75px 50px;
     }
+  }
 
-    &_title {
-        margin-bottom: 30px;
-        text-align: center;
+  &_title {
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
 
-        > span {
-            display: block;
-            font-size: 26px;
-            font-weight: 700;
-            background: linear-gradient(to left, $primary-color 0%, $secondary-color 100%);
-            background-clip: text;
-            color: transparent;
-        }
+    > span {
+      display: block;
+      font-size: 26px;
+      font-weight: 700;
+      width: 100%;
+      background: $title-gradient;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
-}
+  }
 
-// 輸入欄位樣式
-.input-container {
+  &_contact_form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+
+    &_item,
+    &_input,
+    &_password {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 320px;
+      width: 100%;
+    }
+  }
+
+  &_button {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    border-radius: 35px;
+    margin-top: 38px;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background: $button-gradient;
+    padding: 12px auto;
+    height: 42px;
+  }
+  .role-label,
+  .username-label,
+  .password-label {
+    font-size: 16px;
+    color: #606266;
+  }
+  
+  .input-container {
+    position: relative;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    width: 100%;
-
-    label {
-        font-size: 16px;
-        color: #606266;
+  
+    i {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: $primary-color;
     }
-
+  
     .input-wrapper {
-        display: flex;
-        align-items: center;
-        border: 1px solid $border-color;
-        border-radius: 4px;
-        padding: 10px;
-        gap: 5px;
-        background: white;
-
-        img {
-            width: 14px;
-            height: 14px;
+      display: flex;
+      align-items: center;
+      border: 1px solid $border-color;
+      border-radius: 4px;
+      padding: 10px;
+      gap: 5px;
+  
+      .input {
+        border: none;
+        outline: none;
+        font-size: 14px;
+        width: 100%;
+        padding: 0;
+  
+        &::placeholder {
+          color: $primary-color;
         }
+      }
+  
+      svg {
+        width: 14px;
+        height: 14px;
+        fill: $primary-color;
+      }
+    }
+  }
+  
+  .dropdown {
+    color: $primary-color;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    background-color: white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+  }
+  
+  .dropdown-container {
+    position: relative;
+  
+    &::after {
+      content: "▼";
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      color: $primary-color;
+      pointer-events: none;
+      font-size: 6px;
+      line-height: 1;
+    }
+  }
+  
+  svg {
+    width: 16px;
+    height: 16px;
+  }  
+}
 
-        .input {
-            border: none;
-            outline: none;

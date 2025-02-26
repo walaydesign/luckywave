@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Wave 後台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lalezar&family=Noto+Sans+TC:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./public/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="./public/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="" class="header_logo"><img src="./public/img/logo.svg" alt=""></a>
+            <nav class="header_nav d-lg-flex align-items-center">
+                <ul class="d-lg-flex align-items-center">
+                    <li><a href="">首頁</a></li>
+                    <li><a href="">關於我們</a></li>
+                    <li><a href="">服務項目</a></li>
+                    <li><a href="">團隊介紹</a></li>
+                    <li><a href="">成功案例</a></li>
+                    <li><a href="">聯絡我們</a></li>
+                    <li><a href="">線上問題通報</a></li>
+                    <li class="d-lg-none"><a href="">會員中心</a></li>
+                </ul>
+                <a href="" class="header_user d-lg-block d-none"><img src="./public/img/user.svg" alt=""></a>
+            </nav>
+            <div class="header_menu d-lg-none"><img src="./public/img/menu.svg" alt=""></div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="banner">
+            <img class="banner_pic" src="./public/img/banner-pic.png" alt="">
+            <img class="banner_style" src="./public/img/banner.png" alt="">
+        </div>
+
+        <div class="error">
+            <img src="./public/img/error.png" alt="">
+            <h2>糟糕！你似乎迷路了 ！</h2>
+            <p>不如點擊下方按鈕，讓我們幫助你找到正確的路吧！</p>
+            <a href="">首頁</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img class="footer_logo" src="./public/img/logo-white.png" alt="">
+                        <p class="footer_intro d-lg-block d-none">LuckyWave不僅為企業提供靈活的專案功能模組，助力企業。在各個階段實現資訊化發展，同時也為工程師和設計師提供一個共同創業的機會。</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="footer_nav">
+                            <div class="row">
+                                <div class="col-lg-6 col-4"><a href="">首頁</a></div>
+                                <div class="col-lg-6 col-4"><a href="">成功案例</a></div>
+                                <div class="col-lg-6 col-4"><a href="">關於我們</a></div>
+                                <div class="col-lg-6 col-4"><a href="">聯絡我們</a></div>
+                                <div class="col-lg-6 col-4"><a href="">服務項目</a></div>
+                                <div class="col-lg-6 col-4"><a href="">線上問題通報</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="footer_contact">
+                            <div class="footer_contact_inner">
+                                <h3>Contant Us</h3>
+                                <div class="d-flex align-items-center">
+                                    <form action="">
+                                        <input type="email" placeholder="輸入您的Email">
+                                        <button>
+                                            <img src="./public/img/triangle.svg" alt="">
+                                        </button>
+                                    </form>
+                                    <a href="" class="footer_fb"><img src="./public/img/FacebookFilled.svg" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="footer_copyright">Copyright © Lucky Wave All Rights Reserved </p>
+    </footer>
+
+    <script src="./public/js/jquery/jquery.min.js"></script>
+    <script src="./public/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script>
+        $(".header_menu").click(function() {
+            $(".header_nav").toggleClass("active");
+        })
+    </script>
+</body>
+</html>

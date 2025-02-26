@@ -3,13 +3,25 @@ body {
   font-family: "Noto Sans TC", sans-serif;
 }
 
+input, button, select {
+  outline: none;
+  background-color: transparent;
+  border: 0;
+}
+
 .back-login {
   width: 100vw;
   height: 100vh;
   background: url(../img/bg.png) center/cover no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .back-login_logo {
@@ -32,7 +44,7 @@ body {
   height: 100%;
   padding: 3px;
   border-radius: 18px;
-  background: linear-gradient(128deg, #B8D5F6 0%, #FAFAFA 88%, #8AB9FF 100%);
+  background: linear-gradient(128deg, #b8d5f6 0%, #fafafa 88%, #8ab9ff 100%);
 }
 
 .back-login_content_inner {
@@ -54,7 +66,8 @@ body {
   font-size: 26px;
   font-weight: 700;
   width: 100%;
-  background: linear-gradient(to left, #1369B9 0%, #2ABDD2 100%);
+  background: -webkit-gradient(linear, right top, left top, from(#1369b9), to(#2abdd2));
+  background: linear-gradient(to left, #1369b9 0%, #2abdd2 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -72,72 +85,57 @@ body {
 }
 
 .back-login_contact_form {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
   gap: 20px;
-  width: 100%;
-}
-
-.back-login_contact_form_item,
-.back-login_contact_form_input,
-.back-login_contact_form_password {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: 8px;
-  min-width: 320px;
   width: 100%;
 }
 
 .back-login_button {
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
   border-radius: 35px;
   margin-top: 38px;
   font-size: 18px;
   font-weight: 500;
   color: white;
-  border: none;
-  cursor: pointer;
-  background: linear-gradient(to right, #5FC4DC, #6078EA);
-  padding: 12px auto;
+  background: -webkit-gradient(linear, left top, right top, from(#5fc4dc), to(#6078ea));
+  background: linear-gradient(to right, #5fc4dc, #6078ea);
   height: 42px;
 }
 
-label {
-  font-size: 14px;
-  color: #606266;
-}
-
-.input-container {
+.back-login .input-container {
   position: relative;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 8px;
 }
 
-.input-container i {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 18px;
-  color: #A7AEBB;
-}
-
-.input-wrapper {
+.back-login .input-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  border: 1px solid #DCDFE6;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #dcdfe6;
   border-radius: 4px;
   padding: 10px;
   gap: 5px;
 }
 
-.input-wrapper .input {
+.back-login .input-wrapper img {
+  width: 14px;
+}
+
+.back-login .input-wrapper .input {
   border: none;
   outline: none;
   font-size: 14px;
@@ -145,36 +143,37 @@ label {
   padding: 0;
 }
 
-.input-wrapper .input::-moz-placeholder {
-  color: #A7AEBB;
+.back-login .input-wrapper .input::-webkit-input-placeholder {
+  color: #a7aebb;
 }
 
-.input-wrapper .input::placeholder {
-  color: #A7AEBB;
+.back-login .input-wrapper .input:-ms-input-placeholder {
+  color: #a7aebb;
 }
 
-.input-wrapper svg {
-  width: 14px;
-  height: 14px;
-  fill: #A7AEBB;
+.back-login .input-wrapper .input::-ms-input-placeholder {
+  color: #a7aebb;
 }
 
-.dropdown {
-  color: #A7AEBB;
+.back-login .input-wrapper .input::placeholder {
+  color: #a7aebb;
+}
+
+.back-login .dropdown {
+  color: #a7aebb;
   width: 100%;
   padding: 10px;
   font-size: 14px;
-  border: 1px solid #DCDFE6;
+  border: 1px solid #dcdfe6;
   border-radius: 4px;
   background-color: white;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  cursor: pointer;
+     -moz-appearance: none;
+          appearance: none;
   background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
-  background-size: 18px;
   background-repeat: no-repeat;
   background-position: right 10px center;
+  background-size: 18px;
 }
 
 @media screen and (max-width: 575px) {
@@ -184,4 +183,5 @@ label {
   .back-login_content_inner {
     padding: 58px 20px 50px;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+/*# sourceMappingURL=style.css.map */
